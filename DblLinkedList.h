@@ -187,5 +187,24 @@ public:
 		return _size == 0;
 	}
 
+	void Clear() {
+		
+		while (_size > 0) {
+			DeleteFirstNode();
+		}
+
+
+
+		//Node* temp = head;
+		//while (head != NULL) {
+		//	head = head->next;
+		//	delete temp;
+		//	temp = head;
+		//}
+
+		//_size = 0;
+
+	}
+
 };
 

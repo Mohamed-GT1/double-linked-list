@@ -6,11 +6,6 @@ using namespace std;
 int main() {
 	DblLinkedList<int> linkedList;
 
-	if (linkedList.IsEmpty())
-		cout << "yes the list is empty \n";
-	else
-		cout << "no the list is not empty\n";
-
 	linkedList.InsertAtEnd(1);
 	linkedList.InsertAtEnd(2);
 	linkedList.InsertAtEnd(3);
@@ -25,6 +20,10 @@ int main() {
 		cout << "yes the list is empty \n";
 	else
 		cout << "no the list is not empty\n";
+
+	linkedList.Clear();
+	cout << endl;
+	cout << "size : "<<linkedList.Size();
 	
 	return 0;
 }
