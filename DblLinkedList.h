@@ -33,10 +33,10 @@ public:
 
 private:
 	Node *head = NULL;
+	int _size;
 	
 public:
 	
-
 	void PrintLinkedList() {
 		Node* temp = head;
 		while (temp != NULL) {
@@ -56,12 +56,11 @@ public:
 			head->prev = node;
 		}
 		head = node;
+		_size++;
 	}
 
 	
 	
-
-	// Print the linked list
 	void PrintListDetails()
 	{
 		Node* temp = head;
@@ -96,6 +95,8 @@ public:
 			prevNode->next->prev = newnode;
 		}
 		prevNode->next = newnode;
+
+		_size++;
 	}
 
 	void InsertAtEnd( t value) {
@@ -106,6 +107,7 @@ public:
 		if (head == NULL) {
 			newnode->prev = NULL;
 			head = newnode;
+			_size++;
 			return;
 		}
 
@@ -115,6 +117,7 @@ public:
 		}
 		current->next = newnode;
 		newnode->prev = current;
+		_size++;
 	}
 
 	void DeleteNode(Node*& nodeToDelete) {
@@ -127,6 +130,7 @@ public:
 				head->next->prev = NULL;
 			head = head->next;
 			delete nodeToDelete;
+			_size--;
 			return;
 		}
 
@@ -135,6 +139,7 @@ public:
 
 		nodeToDelete->prev->next = nodeToDelete->next;
 		delete nodeToDelete;
+		_size--;
 
 	}
 
@@ -147,6 +152,7 @@ public:
 		if (head != NULL)
 			head->prev = NULL;
 		delete temp;
+		_size--;
 	}
 
 	void DeleteLastNode() {
@@ -156,6 +162,7 @@ public:
 		if (head->next == NULL) {
 			delete head;
 			head = NULL;
+			_size--;
 			return;
 		}
 
@@ -167,6 +174,24 @@ public:
 
 		current->prev->next = NULL;
 		delete current;
+		_size--;
+	}
+
+	int Size() {
+
+		//works just fine but slower , uses O(n)
+		///*const Node* temp = head;
+		//int counter = 0;
+		//
+
+		//while (temp != NULL) {
+		//	counter++;
+		//	temp = temp->next;
+		//}
+
+		//return counter;*/
+		
+		return _size;
 	}
 
 };
