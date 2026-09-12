@@ -172,41 +172,39 @@ public:
 
 	void Reverse() {
 		
-		if (head == NULL || _size == 1)
-			return;
-
-
+		
+		Node* current = head;
 		Node* temppointer = NULL;
 
-		while (head->next != NULL) {
-			temppointer = head->prev;
-			head->prev = head->next;
-			head->next = temppointer;
+		while (current != NULL) {
+			temppointer = current->prev;
+			current->prev = current->next;
+			current->next = temppointer;
 
-			head = head->prev;
+			current = current->prev;
 		}
+		if (temppointer != NULL)
+			head = temppointer->prev;
 
-		temppointer = head->prev;
-		head->prev = head->next;
-		head->next = temppointer;
 		
+	}
 
-		//abo hadhoud implementation 
-		//Node* current = head;
-		//Node* temppointer = NULL;
 
-		//while (current != NULL) {
-		//	temppointer = current->prev;
-		//	current->prev = current->next;
-		//	current->next = temppointer;
+	Node* GetNodeByIndex(int index) {
+		int currentIndex = 0;
+		Node* current = head;
 
-		//	current = current->prev;
-		//}
-		//if (temppointer != NULL)
-		//	head = temppointer->prev;
+		if (index < 0 || index > _size - 1)
+			return NULL;
 
-		//temppointer points to the node before the current one , but at the end it points at before before the last one 
-		//because of while condition , so to get to the last one we use prev ( remember we swapped it with next) to get to the last
+		while (current != NULL) {
+			if (currentIndex == index)
+				return current;
+			current = current->next;
+			currentIndex++;
+		}
+		
+		return NULL;
 
 	}
 

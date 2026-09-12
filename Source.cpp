@@ -6,17 +6,19 @@ using namespace std;
 int main() {
 	DblLinkedList<int> linkedList;
 
-	linkedList.InsertAtEnd(1);
-	linkedList.InsertAtEnd(2);
-	linkedList.InsertAtEnd(3);
-	linkedList.InsertAtEnd(4);
+	linkedList.InsertAtEnd(10);
+	linkedList.InsertAtEnd(20);
+	linkedList.InsertAtEnd(70);
+	linkedList.InsertAtEnd(99);
+	linkedList.InsertAtEnd(50);
 	
 	linkedList.PrintLinkedList();
 
-	linkedList.Reverse();
+	DblLinkedList<int>::Node* myNode;
 
+	myNode = linkedList.GetNodeByIndex(80);
 	cout << endl;
-	linkedList.PrintLinkedList();
+	cout << myNode->data;
 	
 	return 0;
 }
