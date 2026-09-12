@@ -208,5 +208,14 @@ public:
 
 	}
 
+	t GetNodeValueByIndex(int index) {
+		Node* temp = GetNodeByIndex(index);
+
+		if (temp == NULL)
+			return NULL;
+
+		return temp->data;
+	}
+
 };
 

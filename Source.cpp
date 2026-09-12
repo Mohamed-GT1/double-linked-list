@@ -14,11 +14,8 @@ int main() {
 	
 	linkedList.PrintLinkedList();
 
-	DblLinkedList<int>::Node* myNode;
-
-	myNode = linkedList.GetNodeByIndex(80);
 	cout << endl;
-	cout << myNode->data;
+	cout << linkedList.GetNodeValueByIndex(3);
 	
 	return 0;
 }
