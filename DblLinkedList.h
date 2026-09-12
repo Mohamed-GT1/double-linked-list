@@ -7,28 +7,12 @@ class DblLinkedList
 {
 
 public:
+
 	class Node {
 	public:
 		t data;
 		Node* next;
 		Node* prev;
-
-		static void PrintNodeDetails(Node* head)
-		{
-
-			if (head->prev != NULL)
-				cout << head->prev->data;
-			else
-				cout << "NULL";
-
-			cout << " <--> " << head->data << " <--> ";
-
-			if (head->next != NULL)
-				cout << head->next->data << "\n";
-			else
-				cout << "NULL";
-
-		}
 	};
 
 private:
@@ -61,15 +45,6 @@ public:
 
 	
 	
-	void PrintListDetails()
-	{
-		Node* temp = head;
-		cout << "\n\n";
-		while (temp != NULL) {
-			PrintNodeDetails(temp);
-			temp = temp->next;
-		}
-	}
 
 	 Node* find(t value) {
 
@@ -193,16 +168,45 @@ public:
 			DeleteFirstNode();
 		}
 
+	}
+
+	void Reverse() {
+		
+		if (head == NULL || _size == 1)
+			return;
 
 
-		//Node* temp = head;
-		//while (head != NULL) {
-		//	head = head->next;
-		//	delete temp;
-		//	temp = head;
+		Node* temppointer = NULL;
+
+		while (head->next != NULL) {
+			temppointer = head->prev;
+			head->prev = head->next;
+			head->next = temppointer;
+
+			head = head->prev;
+		}
+
+		temppointer = head->prev;
+		head->prev = head->next;
+		head->next = temppointer;
+		
+
+		//abo hadhoud implementation 
+		//Node* current = head;
+		//Node* temppointer = NULL;
+
+		//while (current != NULL) {
+		//	temppointer = current->prev;
+		//	current->prev = current->next;
+		//	current->next = temppointer;
+
+		//	current = current->prev;
 		//}
+		//if (temppointer != NULL)
+		//	head = temppointer->prev;
 
-		//_size = 0;
+		//temppointer points to the node before the current one , but at the end it points at before before the last one 
+		//because of while condition , so to get to the last one we use prev ( remember we swapped it with next) to get to the last
 
 	}
 

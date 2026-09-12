@@ -13,17 +13,10 @@ int main() {
 	
 	linkedList.PrintLinkedList();
 
-	cout << "\n the size of the list " << linkedList.Size();
+	linkedList.Reverse();
 
 	cout << endl;
-	if (linkedList.IsEmpty())
-		cout << "yes the list is empty \n";
-	else
-		cout << "no the list is not empty\n";
-
-	linkedList.Clear();
-	cout << endl;
-	cout << "size : "<<linkedList.Size();
+	linkedList.PrintLinkedList();
 	
 	return 0;
 }
