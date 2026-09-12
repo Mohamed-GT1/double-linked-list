@@ -179,19 +179,12 @@ public:
 
 	int Size() {
 
-		//works just fine but slower , uses O(n)
-		///*const Node* temp = head;
-		//int counter = 0;
-		//
-
-		//while (temp != NULL) {
-		//	counter++;
-		//	temp = temp->next;
-		//}
-
-		//return counter;*/
 		
 		return _size;
+	}
+
+	bool IsEmpty() {
+		return _size == 0;
 	}
 
 };
