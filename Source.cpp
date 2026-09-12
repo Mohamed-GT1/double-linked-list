@@ -14,8 +14,10 @@ int main() {
 	
 	linkedList.PrintLinkedList();
 
-	cout << endl;
-	cout << linkedList.GetNodeValueByIndex(3);
 	
+	linkedList.UpdateNode(2, 1000);
+	
+	cout << endl;
+	linkedList.PrintLinkedList();
 	return 0;
 }

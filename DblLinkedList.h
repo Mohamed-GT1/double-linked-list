@@ -217,5 +217,15 @@ public:
 		return temp->data;
 	}
 
+	bool UpdateNode(int index, t value) {
+		Node* temp = GetNodeByIndex(index);
+
+		if (temp == NULL)
+			return false;
+
+		temp->data = value;
+		return true;
+	}
+
 };
 
