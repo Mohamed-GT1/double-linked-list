@@ -73,6 +73,7 @@ public:
 
 		_size++;
 	}
+	
 
 	void InsertAtEnd( t value) {
 		Node* newnode = new Node;
@@ -227,5 +228,14 @@ public:
 		return true;
 	}
 
+	void InsertAfter(int index, t value) {
+
+		Node* tempnode = GetNodeByIndex(index);
+		if (tempnode == NULL)
+			return;
+
+		InsertAfter(tempnode, value);
+
+	}
 };
 

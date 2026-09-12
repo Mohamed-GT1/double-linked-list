@@ -15,7 +15,7 @@ int main() {
 	linkedList.PrintLinkedList();
 
 	
-	linkedList.UpdateNode(2, 1000);
+	linkedList.InsertAfter(2, 90000);
 	
 	cout << endl;
 	linkedList.PrintLinkedList();
